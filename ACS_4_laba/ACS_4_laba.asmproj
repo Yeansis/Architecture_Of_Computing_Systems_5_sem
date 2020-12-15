@@ -1,0 +1,24 @@
+[Info]
+Version=ASM Visual Project File, Format Version 1.0.1
+[Project]
+nameProject=ACS_4_laba
+compiler=masm
+bit=32
+pathSourceDir=ACS_4_laba
+pathResourceDir=ACS_4_laba
+nameStartUp=ACS_4_laba.asm
+nameCompiler=ml
+nameLinker=link
+nameResourceCompiler=rc
+target=exe
+warningsAsErrors=False
+communicateCLD=
+communicateRunRelease=
+compilerParameters=/c /coff /Cp /Zi
+compilerON=True
+linkerParameters=/SUBSYSTEM:CONSOLE /DEBUG
+linkerON=True
+resourceCompilerParameters=
+resourceCompilerON=False
+sourcesFiles={ACS_4_laba.asm}
+resourcesFiles={}
