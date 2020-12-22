@@ -1,0 +1,24 @@
+[Info]
+Version=ASM Visual Project File, Format Version 1.0.1
+[Project]
+nameProject=ACS_7_laba_var2_main
+compiler=masm
+bit=32
+pathSourceDir=ACS_7_laba_var2_main
+pathResourceDir=ACS_7_laba_var2_main
+nameStartUp=ACS_7_laba_var2_main.asm
+nameCompiler=ml
+nameLinker=link
+nameResourceCompiler=rc
+target=exe
+warningsAsErrors=False
+communicateCLD=
+communicateRunRelease=
+compilerParameters=/c /coff /Cp /Zi
+compilerON=True
+linkerParameters=/SUBSYSTEM:CONSOLE /DEBUG
+linkerON=True
+resourceCompilerParameters=
+resourceCompilerON=False
+sourcesFiles={ACS_7_laba_var2_main.asm}
+resourcesFiles=

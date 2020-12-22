@@ -63,7 +63,6 @@ BSIZE equ 128
 				;если зажимается Enter
 				cmp [buf+10], 13
 					je InputSecondNumb
-					
 				;если вводится не 0 и не 1
 				cmp [buf+14], 30h
 					jl FirstInput

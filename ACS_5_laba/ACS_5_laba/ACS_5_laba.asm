@@ -29,17 +29,17 @@ BSIZE equ 128
 	lvl				db 0
 	
 .data?
-	val1 		db ?
-	val2 		db ?
-	val			db ?
-	copyVal 	db ?
-	rezVal		db ?
-	res 		db ?
-	temp 		db ?
-	stdout 		dd ?
-	stdin		dd ?
-	cRead 		dd ?
-	viv 		db ?
+	val1 			db ?
+	val2 			db ?
+	val				db ?
+	copyVal 		db ?
+	rezVal			db ?
+	res 			db ?
+	temp 			db ?
+	stdout 			dd ?
+	stdin			dd ?
+	cRead 			dd ?
+	viv 			db ?
 .code
 	start:
 		invoke GetStdHandle, STD_OUTPUT_HANDLE
@@ -62,7 +62,6 @@ BSIZE equ 128
 				;если зажимается Enter
 				cmp [buf+10], 13
 					je InputSecondNumb
-					
 				;если вводится не 0 и не 1
 				cmp [buf+14], 30h
 					jl FirstInput
@@ -149,9 +148,9 @@ BSIZE equ 128
 				jmp cycl
 			endCycl:
 				mov al, rezVal
-				mov val1, al
-				mov al, val
 				mov val2, al
+				mov al, val
+				mov val1, al
 				jmp logMultiplication
 			cycl:
 				shl copyVal, 1
@@ -162,12 +161,12 @@ BSIZE equ 128
 				jmp noyes
 				yes:
 					mov al, val
-					or al, srav1 ;на цель подается 1
+					or al, srav1 ;01000000
 					mov val, al
 				noyes:
 					shl copyVal, 1
-					ror srav0, 2
-					ror srav1, 2
+					ror srav0, 2 ;01111111
+					ror srav1, 2 ;10000000
 					inc i
 					cmp i, 4
 						je endPart1
@@ -179,7 +178,6 @@ BSIZE equ 128
 				mov viv, al
 				jmp writeNumb
 		
-		;логическое умножение (part2)
 		logMultiplication:
 			mov bl, val2
 			mov i, 0
