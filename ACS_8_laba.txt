@@ -1,0 +1,42 @@
+#include stdio.h
+#include stdlib.h
+#include systypes.h
+#include unistd.h
+
+void mpinfo(){
+    printf(ID of the current process PID %in, getpid());
+    printf(ID of the parent process PPID %in, getppid());
+    printf(ID process group PGID %in, getpgrp());
+    printf(ID User .real UID %in, getuid());
+    printf(Real user group ID real-GID%in, getgid());
+    printf(Effective user ID - UID %in, geteuid());
+    printf(Effective user group ID GID %inn, getegid());
+}
+
+int calcFor_8lab_ABC(char arr) {
+    mpinfo();
+    int a, b, c, d, e, f, g, h, k, m;
+    sscanf(arr, %d %d %d %d %d %d %d %d %d %d, &a,&b,&c,&d,&e,&f,&g,&h,&k,&m);
+    printf(%d %d %d %d %d %d %d %d %d %dn,a,b,c,d,e,f,g,h,k,m);
+    int res = (a + b)/(cd) + e/f + g/h + k/m;
+    printf(%dn,res);
+    exit(0);
+}
+
+int main() {
+    FILE inp;
+    inp  = fopen(in.txt, r);
+    char arr[128];
+    pid_t var_fork;
+
+    if (inp == NULL) perror("File opening ERROR");
+    else {
+        while (fgets(arr, 128, inp) != NULL) {
+            var_fork = fork();
+            if(var_fork == 0) calcFor_8lab_ABC(arr);
+            else perror(Process creation ERROR);
+        }
+        fclose(inp);
+    }
+    return 0;
+}
